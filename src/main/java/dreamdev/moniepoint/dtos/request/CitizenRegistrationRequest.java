@@ -9,7 +9,7 @@ public class CitizenRegistrationRequest {
 
         private String firstName;
         private String lastName;
-        private LocalDate dateOfBirth;
+        private String dateOfBirth;
         private String stateOfOrigin;
         private String gender;
 

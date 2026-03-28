@@ -1,4 +1,4 @@
-package dreamdev.moniepoint.data.utils;
+package dreamdev.moniepoint.utils;
 
 import dreamdev.moniepoint.utils.NationalIDGenerator;
 import org.junit.jupiter.api.Test;

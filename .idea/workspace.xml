@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/CitizenRegistrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/NationalIDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/utils/NationalIDGeneratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/IncorrectDatePattern.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/InvalidStateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/VotingAppException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/CitizenServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/CitizensRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/CitizensRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizensRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/utils/NationalIDGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/utils/NationalIDGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +53,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.CitizenRepositoryTest.executor": "Run",
+    "JUnit.CitizenServiceImplTest.executor": "Run",
+    "JUnit.CitizenServiceImplTest.register_successTest.executor": "Run",
     "JUnit.NationalIDGeneratorTest.executor": "Run",
     "JUnit.StateEnumTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -62,7 +68,38 @@
       <recent name="dreamdev.moniepoint.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NationalIDGeneratorTest">
+  <component name="RunManager">
+    <configuration name="CitizenServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="electionVotingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dreamdev.moniepoint.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.services" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.services.CitizenServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CitizenServiceImplTest.register_successTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="electionVotingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dreamdev.moniepoint.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.services" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.services.CitizenServiceImplTest" />
+      <option name="METHOD_NAME" value="register_successTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NationalIDGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
@@ -95,6 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CitizenServiceImplTest" />
+        <item itemvalue="JUnit.CitizenServiceImplTest.register_successTest" />
         <item itemvalue="JUnit.NationalIDGeneratorTest" />
         <item itemvalue="JUnit.StateEnumTest" />
       </list>
