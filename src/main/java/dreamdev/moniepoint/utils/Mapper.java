@@ -1,0 +1,52 @@
+package dreamdev.moniepoint.utils;
+
+import dreamdev.moniepoint.data.models.Citizen;
+import dreamdev.moniepoint.data.models.StateEnum;
+import dreamdev.moniepoint.dtos.request.CitizenRegistrationRequest;
+import dreamdev.moniepoint.dtos.response.CitizenRegistrationResponse;
+import dreamdev.moniepoint.exceptions.IncorrectDatePattern;
+import dreamdev.moniepoint.exceptions.InvalidStateException;
+
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Mapper {
+
+    private static final DateTimeFormatter DATE_FORMATTER =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    public static LocalDate parseDate(String dateOfBirth){
+        try {
+            return LocalDate.parse(dateOfBirth, DATE_FORMATTER);
+        } catch (DateTimeException e){
+            throw new IncorrectDatePattern("Invalid date format" + dateOfBirth + "Expected format is yyyy-MM-dd");
+        }
+    }
+
+    public static Citizen map(CitizenRegistrationRequest citizenRegistrationRequest){
+
+        if(!StateEnum.isValidState(citizenRegistrationRequest.getStateOfOrigin())) {
+            throw new InvalidStateException("Invalid State" + citizenRegistrationRequest.getStateOfOrigin());
+        }
+
+        Citizen citizen = new Citizen();
+        citizen.setFirstName(citizenRegistrationRequest.getFirstName());
+        citizen.setNationalID(NationalIDGenerator.generate());
+        citizen.setLastName(citizenRegistrationRequest.getLastName());
+        citizen.setDateOfBirth(parseDate(citizenRegistrationRequest.getDateOfBirth()));
+        citizen.setStateOfOrigin(citizenRegistrationRequest.getStateOfOrigin());
+        citizen.setGender(citizenRegistrationRequest.getGender());
+        return citizen;
+    }
+
+
+    public static CitizenRegistrationResponse map(Citizen savedCitizen){
+        CitizenRegistrationResponse citizenRegistrationResponse = new CitizenRegistrationResponse();
+        citizenRegistrationResponse.setFirstName(savedCitizen.getFirstName());
+        citizenRegistrationResponse.setLastName(savedCitizen.getLastName());
+        citizenRegistrationResponse.setNationalID(savedCitizen.getNationalID());
+        return citizenRegistrationResponse;
+    }
+}
+
