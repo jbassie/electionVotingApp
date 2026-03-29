@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Candidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/ElectionStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLogoutResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersRegisteredController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/VotersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/VotersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +25,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -46,14 +50,21 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.CitizenRepositoryTest.executor": "Run",
+    "JUnit.CitizenServiceImplTest.duplicatePhoneNumber_throwsException.executor": "Run",
     "JUnit.CitizenServiceImplTest.executor": "Run",
     "JUnit.CitizenServiceImplTest.register_successTest.executor": "Run",
     "JUnit.CitizensControllerTest.testRegisterSuccess.executor": "Run",
     "JUnit.NationalIDGeneratorTest.executor": "Run",
+    "JUnit.RegisteredVoterRepositoryTest.executor": "Run",
+    "JUnit.RegisteredVoterRepositoryTest.newRepository_ReturnsZero.executor": "Run",
+    "JUnit.RegisteredVoterRepositoryTest.testSaveRegisteredVoter.executor": "Run",
     "JUnit.StateEnumTest.executor": "Run",
+    "JUnit.VoterServiceImplTest.executor": "Run",
+    "JUnit.VotersIDGeneratorTest.executor": "Run",
+    "JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/ElectionType",
+    "git-widget-placeholder": "feat/RegisteredVoters",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -62,20 +73,7 @@
       <recent name="dreamdev.moniepoint.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.Main" />
-      <module name="electionVotingApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VoterServiceImplTest">
     <configuration name="CitizenServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
@@ -91,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CitizenServiceImplTest.register_successTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CitizenServiceImplTest.duplicatePhoneNumber_throwsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
         <pattern>
@@ -101,50 +99,65 @@
       </extension>
       <option name="PACKAGE_NAME" value="dreamdev.moniepoint.services" />
       <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.services.CitizenServiceImplTest" />
-      <option name="METHOD_NAME" value="register_successTest" />
+      <option name="METHOD_NAME" value="duplicatePhoneNumber_throwsException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CitizensControllerTest.testRegisterSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoterServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.controllers.*" />
+          <option name="PATTERN" value="dreamdev.moniepoint.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.controllers" />
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.controllers.CitizensControllerTest" />
-      <option name="METHOD_NAME" value="testRegisterSuccess" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NationalIDGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="electionVotingApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.data.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.data.utils" />
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.data.utils.NationalIDGeneratorTest" />
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.services" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.services.VoterServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VotersIDGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="electionVotingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dreamdev.moniepoint.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.utils" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.utils.VotersIDGeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VotersIDGeneratorTest.twoGeneratedIDs_AreUnique" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="electionVotingApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dreamdev.moniepoint.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.utils" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.utils.VotersIDGeneratorTest" />
+      <option name="METHOD_NAME" value="twoGeneratedIDs_AreUnique" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CitizensControllerTest.testRegisterSuccess" />
+        <item itemvalue="JUnit.VoterServiceImplTest" />
         <item itemvalue="JUnit.CitizenServiceImplTest" />
-        <item itemvalue="JUnit.CitizenServiceImplTest.register_successTest" />
-        <item itemvalue="JUnit.NationalIDGeneratorTest" />
+        <item itemvalue="JUnit.CitizenServiceImplTest.duplicatePhoneNumber_throwsException" />
+        <item itemvalue="JUnit.VotersIDGeneratorTest" />
+        <item itemvalue="JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique" />
       </list>
     </recent_temporary>
   </component>
@@ -158,5 +171,21 @@
       <updated>1774693322479</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

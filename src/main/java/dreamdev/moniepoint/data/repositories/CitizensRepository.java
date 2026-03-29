@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface CitizensRepository extends MongoRepository<Citizen, String> {
 
     Optional<Citizen> findByNationalID(String nationalID);
+    Optional<Citizen> findByPhoneNumber(String phoneNumber);
 }
