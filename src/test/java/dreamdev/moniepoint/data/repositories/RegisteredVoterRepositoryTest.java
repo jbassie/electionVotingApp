@@ -1,5 +1,6 @@
 package dreamdev.moniepoint.data.repositories;
 
+
 import dreamdev.moniepoint.data.models.Citizen;
 import dreamdev.moniepoint.data.models.RegisteredVoter;
 import org.junit.jupiter.api.AfterEach;
@@ -9,20 +10,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class RegisteredVoterRepositoryTest {
 
     @Autowired
-    private CitizensRepository citizensRepository;
+    private RegisteredVotersRepository registeredVotersRepository;
 
     @Autowired
-    private RegisteredVotersRepository registeredVotersRepository;
+    private CitizensRepository citizensRepository;
 
     @AfterEach
     void tearDown(){
         registeredVotersRepository.deleteAll();
+        citizensRepository.deleteAll();
     }
 
     @Test
@@ -30,21 +33,31 @@ public class RegisteredVoterRepositoryTest {
         assertEquals(0L, registeredVotersRepository.count());
     }
 
+
     @Test
     void testSaveRegisteredVoter() {
-        RegisteredVoter registeredVoter = new RegisteredVoter();
+        // First create and save a Citizen
+        Citizen citizen = new Citizen();
         citizen.setFirstName("John");
         citizen.setLastName("Doe");
-        citizen.setNationalID("NGN1234567890");
-        citizen.setDateOfBirth(LocalDate.of(1990, 1, 1));
+        citizen.setNationalID("NIG4829301746");
         citizen.setStateOfOrigin("LAGOS");
         citizen.setGender("Male");
+        citizen.setDateOfBirth(LocalDate.of(1990, 5, 21));
+        Citizen savedCitizen = citizensRepository.save(citizen);
 
-        Citizen saved = citizensRepository.save(citizen);
+        RegisteredVoter registeredVoter = new RegisteredVoter();
+        registeredVoter.setCitizen(savedCitizen);
+        registeredVoter.setVoterID("B012345235");
+        registeredVoter.setPassword("1234");
+        registeredVoter.setRegisteredAt(LocalDate.now());
+
+        RegisteredVoter saved = registeredVotersRepository.save(registeredVoter);
 
         assertThat(saved.getId()).isNotNull();
-        assertThat(saved.getNationalID()).isEqualTo("NGN1234567890");
-        assertThat(saved.getFirstName()).isEqualTo("John");
+        assertThat(saved.getCitizen().getNationalID()).isEqualTo("NIG4829301746");
+        assertThat(saved.getVoterID()).isEqualTo("B012345235");
+
     }
 
 
