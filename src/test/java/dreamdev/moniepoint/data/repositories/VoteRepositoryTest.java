@@ -113,7 +113,6 @@ public class VoteRepositoryTest {
         buildAndSaveVote("VTR99002", candidate, "election-101");
 
         boolean exists = voteRepository.existsByVoterIdAndElectionTypeId("VTR99002", "election-101");
-
         assertThat(exists).isTrue();
     }
 
@@ -138,13 +137,11 @@ public class VoteRepositoryTest {
     }
 
 
-
     @Test
     void testFindAllByElectionTypeId_returnsEmpty_whenNoVotesCast() {
         List<Vote> votes = voteRepository.findAllByElectionTypeId("election-empty");
         assertThat(votes.size()).isEqualTo(0);
     }
-
 
 
     @Test
