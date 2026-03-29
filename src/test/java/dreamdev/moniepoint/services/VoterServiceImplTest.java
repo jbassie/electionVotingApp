@@ -7,6 +7,7 @@ import dreamdev.moniepoint.dtos.request.VotersLoginRequest;
 import dreamdev.moniepoint.dtos.request.VotersRegistrationRequest;
 import dreamdev.moniepoint.exceptions.AlreadyRegisteredException;
 import dreamdev.moniepoint.exceptions.CitizenNotFoundException;
+import dreamdev.moniepoint.exceptions.CitizenNotOfAgeException;
 import dreamdev.moniepoint.exceptions.InvalidLoginDetailsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -141,5 +142,46 @@ public class VoterServiceImplTest {
     public void logoutUnregisteredVoter_throwsExceptionTest() {
         assertThrows(InvalidLoginDetailsException.class,
                 () -> voterService.logout("INVALID_ID"));
+    }
+
+    @Test
+    public void registerUnderAgeCitizen_throwsExceptionTest() {
+        // Register an underage citizen (born 2015)
+        CitizenRegistrationRequest underAgeRequest = new CitizenRegistrationRequest();
+        underAgeRequest.setFirstName("Jane");
+        underAgeRequest.setLastName("Doe");
+        underAgeRequest.setDateOfBirth("2015-01-01"); // only 10 years old
+        underAgeRequest.setPhoneNumber("08012345671");
+        underAgeRequest.setGender("Female");
+        underAgeRequest.setStateOfOrigin("LAGOS");
+
+        var underAgeCitizenResponse = citizenService.register(underAgeRequest);
+
+        VotersRegistrationRequest underAgeVoterRequest = new VotersRegistrationRequest();
+        underAgeVoterRequest.setNationalID(underAgeCitizenResponse.getNationalID());
+        underAgeVoterRequest.setPassword("password123");
+
+        assertThrows(CitizenNotOfAgeException.class,
+                () -> voterService.register(underAgeVoterRequest));
+
+    }
+
+    @Test
+    public void registerEighteenYearOldCitizen_successTest() {
+        CitizenRegistrationRequest eighteenYearOldRequest = new CitizenRegistrationRequest();
+        eighteenYearOldRequest.setFirstName("James");
+        eighteenYearOldRequest.setLastName("Doe");
+        eighteenYearOldRequest.setDateOfBirth("2005-01-01"); // exactly 18 this year
+        eighteenYearOldRequest.setPhoneNumber("08012345672");
+        eighteenYearOldRequest.setGender("Male");
+        eighteenYearOldRequest.setStateOfOrigin("LAGOS");
+
+        var eighteenYearOldResponse = citizenService.register(eighteenYearOldRequest);
+
+        VotersRegistrationRequest eighteenVoterRequest = new VotersRegistrationRequest();
+        eighteenVoterRequest.setNationalID(eighteenYearOldResponse.getNationalID());
+        eighteenVoterRequest.setPassword("password123");
+
+        assertDoesNotThrow(() -> voterService.register(eighteenVoterRequest));
     }
 }

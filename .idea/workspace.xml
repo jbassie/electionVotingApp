@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLogoutResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/CandidateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/ElectionTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/CitizenNotOfAgeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersRegisteredController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/VotersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/VotersMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" afterDir="false" />
     </list>
@@ -64,7 +60,7 @@
     "JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/RegisteredVoters",
+    "git-widget-placeholder": "feat/ElectionType",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
