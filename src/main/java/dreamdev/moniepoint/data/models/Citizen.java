@@ -17,6 +17,7 @@ public class Citizen {
     private String firstName;
     private String lastName;
     private String nationalID;
+    private String phoneNumber;
     private LocalDate dateOfBirth;
     private String stateOfOrigin;
     private String gender;
