@@ -10,7 +10,7 @@ public class VotersRegistrationResponse {
     private String age;
     private String nationalID;
     private String phoneNumber;
-    private String votersID;
+    private String voterID;
     private String stateOfOrigin;
 
 }

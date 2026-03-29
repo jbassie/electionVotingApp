@@ -17,7 +17,7 @@ public class CitizenController {
 
     private CitizenService citizenService;
 
-    @PostMapping("/citizen")
+    @PostMapping("/citizens/register")
     public ResponseEntity<?> register(@RequestBody CitizenRegistrationRequest citizenRegistrationRequest ){
         try{
             return new ResponseEntity<>(new ApiResponse(true, citizenService.register(citizenRegistrationRequest)), HttpStatus.CREATED);
