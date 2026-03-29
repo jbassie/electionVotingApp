@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersRegisteredController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/AlreadyRegisteredException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/CitizenNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersLoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersLoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/InvalidLoginDetailsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/VotersMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/RegisteredVotersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/RegisteredVotersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/RegisteredVoterRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/RegisteredVoterRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/CitizensMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/CitizenServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/CitizenServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

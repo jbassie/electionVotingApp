@@ -3,7 +3,6 @@ package dreamdev.moniepoint.services;
 import dreamdev.moniepoint.data.repositories.CitizensRepository;
 import dreamdev.moniepoint.dtos.request.CitizenRegistrationRequest;
 import dreamdev.moniepoint.exceptions.DuplicatePhoneNumberException;
-import dreamdev.moniepoint.utils.Mapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

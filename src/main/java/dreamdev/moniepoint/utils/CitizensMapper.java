@@ -1,20 +1,16 @@
 package dreamdev.moniepoint.utils;
 
 import dreamdev.moniepoint.data.models.Citizen;
-import dreamdev.moniepoint.data.models.RegisteredVoter;
 import dreamdev.moniepoint.data.models.StateEnum;
 import dreamdev.moniepoint.dtos.request.CitizenRegistrationRequest;
-import dreamdev.moniepoint.dtos.request.VotersRegistrationRequest;
 import dreamdev.moniepoint.dtos.response.CitizenRegistrationResponse;
-import dreamdev.moniepoint.dtos.response.VotersRegistrationResponse;
 import dreamdev.moniepoint.exceptions.*;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Mapper {
+public class CitizensMapper {
 
     private static final DateTimeFormatter DATE_FORMATTER =
             DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -65,31 +61,5 @@ public class Mapper {
     }
 
 
-    public static RegisteredVoter map(VotersRegistrationRequest votersRegistrationRequest, Citizen citizen){
-
-
-        RegisteredVoter registeredVoter = new RegisteredVoter();
-        registeredVoter.setCitizen(citizen);
-        registeredVoter.setVoterID(VoterIDGenerator.generate());
-        registeredVoter.setNationalID(citizen.getNationalID());
-        registeredVoter.setPassword(votersRegistrationRequest.getPassword());
-        registeredVoter.setRegisteredAt(LocalDateTime.now());
-        return registeredVoter;
-    }
-
-
-    public static VotersRegistrationResponse map(RegisteredVoter registeredVoter) {
-        VotersRegistrationResponse response = new VotersRegistrationResponse();
-        response.setFirstName(registeredVoter.getCitizen().getFirstName());
-        response.setLastName(registeredVoter.getCitizen().getLastName());
-        response.setNationalID(registeredVoter.getCitizen().getNationalID());
-        response.setPhoneNumber(registeredVoter.getCitizen().getPhoneNumber());
-        response.setStateOfOrigin(registeredVoter.getCitizen().getStateOfOrigin());
-        response.setVotersID(registeredVoter.getVoterID());
-        response.setAge(String.valueOf(
-                LocalDate.now().getYear() - registeredVoter.getCitizen().getDateOfBirth().getYear()
-        ));
-        return response;
-    }
 }
 

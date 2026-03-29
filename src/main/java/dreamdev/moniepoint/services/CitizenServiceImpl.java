@@ -8,7 +8,7 @@ import dreamdev.moniepoint.exceptions.DuplicatePhoneNumberException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static dreamdev.moniepoint.utils.Mapper.*;
+import static dreamdev.moniepoint.utils.CitizensMapper.*;
 
 @Service
 public class CitizenServiceImpl implements CitizenService {
