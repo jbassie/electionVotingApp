@@ -146,7 +146,6 @@ public class VoterServiceImplTest {
 
     @Test
     public void registerUnderAgeCitizen_throwsExceptionTest() {
-        // Register an underage citizen (born 2015)
         CitizenRegistrationRequest underAgeRequest = new CitizenRegistrationRequest();
         underAgeRequest.setFirstName("Jane");
         underAgeRequest.setLastName("Doe");

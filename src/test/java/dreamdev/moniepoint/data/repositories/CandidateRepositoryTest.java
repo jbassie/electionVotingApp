@@ -145,3 +145,4 @@ public class CandidateRepositoryTest {
         assertThat(exists).isFalse();
     }
 
+}

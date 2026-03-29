@@ -10,5 +10,5 @@ import dreamdev.moniepoint.dtos.response.VotersRegistrationResponse;
 public interface VoterService {
     VotersRegistrationResponse register(VotersRegistrationRequest votersRegistrationRequest);
     VotersLoginResponse login(VotersLoginRequest votersLoginRequest);
-    VotersLogoutResponse logout(String nationalID);
+    VotersLogoutResponse logout(String voterID);
 }

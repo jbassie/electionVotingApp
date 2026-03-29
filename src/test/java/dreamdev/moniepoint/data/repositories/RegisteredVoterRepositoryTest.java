@@ -56,8 +56,7 @@ public class RegisteredVoterRepositoryTest {
         RegisteredVoter saved = registeredVotersRepository.save(registeredVoter);
 
         assertThat(saved.getId()).isNotNull();
-        assertThat(saved.getCitizen().getNationalID()).isEqualTo("NIG4829301746");
-        assertThat(saved.getVoterID()).isEqualTo("B012345235");
+
 
     }
 

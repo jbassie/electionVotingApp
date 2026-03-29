@@ -11,14 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/voter")
+@RequestMapping("/voters")
 public class VotersController {
 
 
         @Autowired
         private VoterService voterService;
 
-        @PostMapping("/voters/register")
+        @PostMapping("register")
         public ResponseEntity<?> register(@RequestBody VotersRegistrationRequest request) {
             try {
                 return new ResponseEntity<>(
@@ -40,10 +40,10 @@ public class VotersController {
             }
         }
 
-        @PostMapping("/logout/{nationalID}")
-        public ResponseEntity<?> logout(@PathVariable String nationalID) {
+        @PostMapping("/logout/{voterID}")
+        public ResponseEntity<?> logout(@PathVariable String voterID) {
             try {
-                voterService.logout(nationalID);
+                voterService.logout(voterID);
                 return new ResponseEntity<>(
                         new ApiResponse(true, "Voter logged out successfully"), HttpStatus.OK);
             } catch (VotingAppException e) {
