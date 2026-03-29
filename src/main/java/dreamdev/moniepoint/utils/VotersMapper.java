@@ -12,14 +12,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class VotersMapper {
-    public static void validateAge(Citizen citizen) {
+        public static void validateAge(Citizen citizen) {
 
-        int age = LocalDate.now().getYear() - citizen.getDateOfBirth().getYear();
-        if (age < 18) {
-            throw new CitizenNotOfAgeException("Citizen must be at least 18 years old to register as a voter. " +
-                    "Current age: " + age);
+            int age = LocalDate.now().getYear() - citizen.getDateOfBirth().getYear();
+            if (age < 18) {
+                throw new CitizenNotOfAgeException("Citizen must be at least 18 years old to register as a voter. " +
+                        "Current age: " + age);
+            }
         }
-    }
 
         public static RegisteredVoter map(VotersRegistrationRequest request, Citizen citizen) {
             validateAge(citizen);

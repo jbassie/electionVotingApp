@@ -150,7 +150,7 @@ public class VoterServiceImplTest {
         CitizenRegistrationRequest underAgeRequest = new CitizenRegistrationRequest();
         underAgeRequest.setFirstName("Jane");
         underAgeRequest.setLastName("Doe");
-        underAgeRequest.setDateOfBirth("2015-01-01"); // only 10 years old
+        underAgeRequest.setDateOfBirth("2015-01-01");
         underAgeRequest.setPhoneNumber("08012345671");
         underAgeRequest.setGender("Female");
         underAgeRequest.setStateOfOrigin("LAGOS");
@@ -171,7 +171,7 @@ public class VoterServiceImplTest {
         CitizenRegistrationRequest eighteenYearOldRequest = new CitizenRegistrationRequest();
         eighteenYearOldRequest.setFirstName("James");
         eighteenYearOldRequest.setLastName("Doe");
-        eighteenYearOldRequest.setDateOfBirth("2005-01-01"); // exactly 18 this year
+        eighteenYearOldRequest.setDateOfBirth("2005-01-01");
         eighteenYearOldRequest.setPhoneNumber("08012345672");
         eighteenYearOldRequest.setGender("Male");
         eighteenYearOldRequest.setStateOfOrigin("LAGOS");
