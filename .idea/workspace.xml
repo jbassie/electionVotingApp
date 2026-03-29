@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/RegisteredVotersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/RegisteredVoterRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +48,11 @@
     "JUnit.CitizenServiceImplTest.register_successTest.executor": "Run",
     "JUnit.CitizensControllerTest.testRegisterSuccess.executor": "Run",
     "JUnit.NationalIDGeneratorTest.executor": "Run",
+    "JUnit.RegisteredVoterRepositoryTest.executor": "Run",
     "JUnit.StateEnumTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feat/RegisteredVoters",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -58,7 +61,7 @@
       <recent name="dreamdev.moniepoint.services" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RegisteredVoterRepositoryTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.Main" />
       <module name="electionVotingApp" />
@@ -119,16 +122,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NationalIDGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisteredVoterRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.data.utils.*" />
+          <option name="PATTERN" value="dreamdev.moniepoint.data.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.data.utils" />
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.data.utils.NationalIDGeneratorTest" />
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.data.repositories" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.data.repositories.RegisteredVoterRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegisteredVoterRepositoryTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CitizensControllerTest.testRegisterSuccess" />
         <item itemvalue="JUnit.CitizenServiceImplTest" />
         <item itemvalue="JUnit.CitizenServiceImplTest.register_successTest" />
-        <item itemvalue="JUnit.NationalIDGeneratorTest" />
       </list>
     </recent_temporary>
   </component>
