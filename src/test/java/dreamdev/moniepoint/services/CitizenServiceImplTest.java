@@ -2,6 +2,7 @@ package dreamdev.moniepoint.services;
 
 import dreamdev.moniepoint.data.repositories.CitizensRepository;
 import dreamdev.moniepoint.dtos.request.CitizenRegistrationRequest;
+import dreamdev.moniepoint.exceptions.DuplicatePhoneNumberException;
 import dreamdev.moniepoint.utils.Mapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 public class CitizenServiceImplTest {
@@ -28,6 +30,7 @@ public class CitizenServiceImplTest {
         registrationRequest.setFirstName("John");
         registrationRequest.setLastName("Doe");
         registrationRequest.setDateOfBirth("2014-03-17");
+        registrationRequest.setPhoneNumber("01234567891");
         registrationRequest.setGender("Male");
         registrationRequest.setStateOfOrigin("Lagos");
 
@@ -42,4 +45,22 @@ public class CitizenServiceImplTest {
         assertEquals(1L, citizensRepository.count());
     }
 
+   @ Test
+    public void duplicatePhoneNumber_throwsException() {
+
+        citizenService.register(registrationRequest);
+        assertEquals(1L, citizensRepository.count());
+
+
+        CitizenRegistrationRequest duplicateRequest = new CitizenRegistrationRequest();
+        duplicateRequest.setFirstName("Jane");
+        duplicateRequest.setLastName("Doe");
+        duplicateRequest.setDateOfBirth("2014-03-17");
+        duplicateRequest.setGender("Female");
+        duplicateRequest.setStateOfOrigin("LAGOS");
+        duplicateRequest.setPhoneNumber("01234567891"); // same phone number
+
+        assertThrows(DuplicatePhoneNumberException.class,
+                () -> citizenService.register(duplicateRequest));
+    }
 }

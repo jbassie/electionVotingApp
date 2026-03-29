@@ -52,6 +52,7 @@ public class CitizenRepositoryTest {
         citizen.setFirstName("Jane");
         citizen.setLastName("Doe");
         citizen.setNationalID("NGN9876543210");
+        citizen.setPhoneNumber("12345678901");
         citizen.setDateOfBirth(LocalDate.of(1995, 5, 20));
         citizen.setStateOfOrigin("KANO");
         citizen.setGender("Female");
@@ -74,6 +75,7 @@ public class CitizenRepositoryTest {
         Citizen citizen = new Citizen();
         citizen.setFirstName("Ada");
         citizen.setLastName("Obi");
+        citizen.setPhoneNumber("12345678901");
         citizen.setNationalID("NGN1111111111");
         citizen.setDateOfBirth(LocalDate.of(2000, 6, 15));
         citizen.setStateOfOrigin("ENUGU");
