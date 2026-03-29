@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersRegistrationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/DuplicatePhoneNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/InvalidPhoneNumberException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/VotersRegisteredController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/AlreadyRegisteredException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/exceptions/CitizenNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/VoterServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Citizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/CitizensRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/CitizensRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/RegisteredVoter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/RegisteredVotersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/repositories/RegisteredVotersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/VotersRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/VotersRegistrationResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/CitizenRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/CitizenServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/services/CitizenServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/RegisteredVoterRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dreamdev/moniepoint/data/repositories/RegisteredVoterRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,7 @@
     "JUnit.RegisteredVoterRepositoryTest.newRepository_ReturnsZero.executor": "Run",
     "JUnit.RegisteredVoterRepositoryTest.testSaveRegisteredVoter.executor": "Run",
     "JUnit.StateEnumTest.executor": "Run",
+    "JUnit.VoterServiceImplTest.executor": "Run",
     "JUnit.VotersIDGeneratorTest.executor": "Run",
     "JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -74,7 +76,7 @@
       <recent name="dreamdev.moniepoint.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CitizenServiceImplTest">
+  <component name="RunManager" selected="JUnit.VoterServiceImplTest">
     <configuration name="CitizenServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
@@ -106,16 +108,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisteredVoterRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoterServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="electionVotingApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.data.repositories.*" />
+          <option name="PATTERN" value="dreamdev.moniepoint.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.data.repositories" />
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.data.repositories.RegisteredVoterRepositoryTest" />
+      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.services" />
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.services.VoterServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VoterServiceImplTest" />
         <item itemvalue="JUnit.CitizenServiceImplTest" />
         <item itemvalue="JUnit.CitizenServiceImplTest.duplicatePhoneNumber_throwsException" />
         <item itemvalue="JUnit.VotersIDGeneratorTest" />
         <item itemvalue="JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique" />
-        <item itemvalue="JUnit.RegisteredVoterRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -172,5 +174,16 @@
       <updated>1774693322479</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

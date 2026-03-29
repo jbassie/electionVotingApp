@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -50,7 +51,7 @@ public class RegisteredVoterRepositoryTest {
         registeredVoter.setCitizen(savedCitizen);
         registeredVoter.setVoterID("B012345235");
         registeredVoter.setPassword("1234");
-        registeredVoter.setRegisteredAt(LocalDate.now());
+        registeredVoter.setRegisteredAt(LocalDateTime.now());
 
         RegisteredVoter saved = registeredVotersRepository.save(registeredVoter);
 

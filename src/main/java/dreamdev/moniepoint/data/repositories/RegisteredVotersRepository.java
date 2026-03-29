@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface RegisteredVotersRepository extends MongoRepository<RegisteredVoter, String> {
 
-    Optional<RegisteredVoter> findByCitizenNationalID(String nationalID);
+    Optional<RegisteredVoter> findByNationalID(String nationalID);
     Optional<RegisteredVoter> findByVoterID(String votersID);
 }

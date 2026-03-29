@@ -1,15 +1,17 @@
 package dreamdev.moniepoint.utils;
 
 import dreamdev.moniepoint.data.models.Citizen;
+import dreamdev.moniepoint.data.models.RegisteredVoter;
 import dreamdev.moniepoint.data.models.StateEnum;
 import dreamdev.moniepoint.dtos.request.CitizenRegistrationRequest;
+import dreamdev.moniepoint.dtos.request.VotersRegistrationRequest;
 import dreamdev.moniepoint.dtos.response.CitizenRegistrationResponse;
-import dreamdev.moniepoint.exceptions.IncorrectDatePattern;
-import dreamdev.moniepoint.exceptions.InvalidPhoneNumberException;
-import dreamdev.moniepoint.exceptions.InvalidStateException;
+import dreamdev.moniepoint.dtos.response.VotersRegistrationResponse;
+import dreamdev.moniepoint.exceptions.*;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Mapper {
@@ -41,12 +43,8 @@ public class Mapper {
     }
 
 
-
-
     public static Citizen map(CitizenRegistrationRequest citizenRegistrationRequest){
         validate(citizenRegistrationRequest);
-
-
         Citizen citizen = new Citizen();
         citizen.setFirstName(citizenRegistrationRequest.getFirstName());
         citizen.setNationalID(NationalIDGenerator.generate());
@@ -58,13 +56,40 @@ public class Mapper {
         return citizen;
     }
 
-
     public static CitizenRegistrationResponse map(Citizen savedCitizen){
         CitizenRegistrationResponse citizenRegistrationResponse = new CitizenRegistrationResponse();
         citizenRegistrationResponse.setFirstName(savedCitizen.getFirstName());
         citizenRegistrationResponse.setLastName(savedCitizen.getLastName());
         citizenRegistrationResponse.setNationalID(savedCitizen.getNationalID());
         return citizenRegistrationResponse;
+    }
+
+
+    public static RegisteredVoter map(VotersRegistrationRequest votersRegistrationRequest, Citizen citizen){
+
+
+        RegisteredVoter registeredVoter = new RegisteredVoter();
+        registeredVoter.setCitizen(citizen);
+        registeredVoter.setVoterID(VoterIDGenerator.generate());
+        registeredVoter.setNationalID(citizen.getNationalID());
+        registeredVoter.setPassword(votersRegistrationRequest.getPassword());
+        registeredVoter.setRegisteredAt(LocalDateTime.now());
+        return registeredVoter;
+    }
+
+
+    public static VotersRegistrationResponse map(RegisteredVoter registeredVoter) {
+        VotersRegistrationResponse response = new VotersRegistrationResponse();
+        response.setFirstName(registeredVoter.getCitizen().getFirstName());
+        response.setLastName(registeredVoter.getCitizen().getLastName());
+        response.setNationalID(registeredVoter.getCitizen().getNationalID());
+        response.setPhoneNumber(registeredVoter.getCitizen().getPhoneNumber());
+        response.setStateOfOrigin(registeredVoter.getCitizen().getStateOfOrigin());
+        response.setVotersID(registeredVoter.getVoterID());
+        response.setAge(String.valueOf(
+                LocalDate.now().getYear() - registeredVoter.getCitizen().getDateOfBirth().getYear()
+        ));
+        return response;
     }
 }
 

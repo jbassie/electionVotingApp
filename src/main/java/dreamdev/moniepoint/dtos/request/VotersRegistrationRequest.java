@@ -6,6 +6,8 @@ import lombok.Data;
 public class VotersRegistrationRequest {
     private String nationalID;
     private String dateOfBirth;
+    private String password;
     private String phoneNumber;
+
 
 }
