@@ -37,7 +37,6 @@ public class RegisteredVoterRepositoryTest {
 
     @Test
     void testSaveRegisteredVoter() {
-        // First create and save a Citizen
         Citizen citizen = new Citizen();
         citizen.setFirstName("John");
         citizen.setLastName("Doe");

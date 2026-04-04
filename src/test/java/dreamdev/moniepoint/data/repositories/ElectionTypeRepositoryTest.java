@@ -74,7 +74,6 @@ public class ElectionTypeRepositoryTest {
 
         Optional<ElectionType> found = electionTypeRepository.findByName("Senatorial 2026");
 
-
         assertThat(found.get().getName()).isEqualTo("Senatorial 2026");
     }
 

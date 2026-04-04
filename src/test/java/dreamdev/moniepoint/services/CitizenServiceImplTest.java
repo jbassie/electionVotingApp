@@ -35,8 +35,6 @@ public class CitizenServiceImplTest {
 
     }
 
-
-
     @Test
     public void register_successTest(){
         assertEquals(0L, citizensRepository.count());
@@ -50,14 +48,13 @@ public class CitizenServiceImplTest {
         citizenService.register(registrationRequest);
         assertEquals(1L, citizensRepository.count());
 
-
         CitizenRegistrationRequest duplicateRequest = new CitizenRegistrationRequest();
         duplicateRequest.setFirstName("Jane");
         duplicateRequest.setLastName("Doe");
         duplicateRequest.setDateOfBirth("2014-03-17");
         duplicateRequest.setGender("Female");
         duplicateRequest.setStateOfOrigin("LAGOS");
-        duplicateRequest.setPhoneNumber("01234567891"); // same phone number
+        duplicateRequest.setPhoneNumber("01234567891");
 
         assertThrows(DuplicatePhoneNumberException.class,
                 () -> citizenService.register(duplicateRequest));

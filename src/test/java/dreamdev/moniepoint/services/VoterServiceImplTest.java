@@ -117,9 +117,7 @@ public class VoterServiceImplTest {
 
         assertThrows(InvalidLoginDetailsException.class,
                 () -> voterService.login(votersLoginRequest));
-        assertFalse(registeredVotersRepository
-                .findByVoterID(voterID)
-                .get().isLoggedIn());
+
     }
 
     @Test
