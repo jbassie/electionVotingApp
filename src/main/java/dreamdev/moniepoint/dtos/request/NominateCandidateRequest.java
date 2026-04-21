@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class NominateCandidateRequest {
-    private String voterID;
-    private String electionTypeId;
+    private String nominatorVoterID;
+    private String nomineeVoterID;
+    private String electionId;
 }

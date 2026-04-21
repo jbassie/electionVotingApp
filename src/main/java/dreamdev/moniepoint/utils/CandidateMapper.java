@@ -23,7 +23,7 @@ public class CandidateMapper {
         response.setStateOfOrigin(citizen.getStateOfOrigin());
         response.setNationalID(citizen.getNationalID());
         response.setElectionName(election.getName());
-        response.setElectionTypeId(election.getId());
+        response.setElectionId(election.getId());
         response.setOtherCandidateNames(otherCandidateNames);
         response.setNominatedAt(candidate.getNominatedAt());
         return response;

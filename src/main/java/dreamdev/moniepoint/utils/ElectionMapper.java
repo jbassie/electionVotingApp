@@ -7,6 +7,7 @@ import dreamdev.moniepoint.data.models.RegisteredVoter;
 import dreamdev.moniepoint.dtos.response.ElectionResponse;
 import dreamdev.moniepoint.dtos.response.ElectionResultsResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +18,11 @@ public class ElectionMapper {
         response.setElectionTypeId(election.getId());
         response.setName(election.getName());
         response.setDescription(election.getDescription());
+        response.setType(election.getType());
         response.setStatus(election.getStatus());
-        response.setCandidateIds(election.getCandidateIds());
+        response.setCandidateIds(election.getCandidateIds() != null ? election.getCandidateIds() : new ArrayList<>());
+        response.setStartDate(election.getStartDate());
+        response.setEndDate(election.getEndDate());
         response.setCreatedAt(election.getCreatedAt());
         return response;
     }

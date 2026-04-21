@@ -13,6 +13,7 @@ import dreamdev.moniepoint.dtos.response.NominateCandidateResponse;
 import dreamdev.moniepoint.exceptions.AlreadyANominatedCandidateException;
 import dreamdev.moniepoint.exceptions.ElectionNotFoundException;
 import dreamdev.moniepoint.exceptions.InvalidElectionStateException;
+import dreamdev.moniepoint.exceptions.SelfNominationException;
 import dreamdev.moniepoint.exceptions.VoterNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,32 +38,40 @@ public class CandidateServiceImpl implements CandidateService {
 
     @Override
     public NominateCandidateResponse nominate(NominateCandidateRequest request) {
-        RegisteredVoter voter = registeredVotersRepository.findByVoterID(request.getVoterID())
+        registeredVotersRepository.findByVoterID(request.getNominatorVoterID())
                 .orElseThrow(() -> new VoterNotFoundException(
-                        "No voter found with ID: " + request.getVoterID()));
+                        "No voter found with nominator ID: " + request.getNominatorVoterID()));
 
-        ElectionType election = electionTypeRepository.findById(request.getElectionTypeId())
+        if (request.getNominatorVoterID().equals(request.getNomineeVoterID()))
+            throw new SelfNominationException("A voter cannot nominate themselves");
+
+        RegisteredVoter nominee = registeredVotersRepository.findByVoterID(request.getNomineeVoterID())
+                .orElseThrow(() -> new VoterNotFoundException(
+                        "No voter found with nominee ID: " + request.getNomineeVoterID()));
+
+        ElectionType election = electionTypeRepository.findById(request.getElectionId())
                 .orElseThrow(() -> new ElectionNotFoundException(
-                        "No election found with ID: " + request.getElectionTypeId()));
+                        "No election found with ID: " + request.getElectionId()));
 
         if (election.getStatus() != ElectionStatus.PENDING)
             throw new InvalidElectionStateException(
                     "Candidates can only be nominated in PENDING elections. Current status: " + election.getStatus());
 
-        if (candidateRepository.existsByRegisteredVoterAndElectionTypeId(voter, request.getElectionTypeId()))
+        if (candidateRepository.existsByRegisteredVoterAndElectionTypeId(nominee, request.getElectionId()))
             throw new AlreadyANominatedCandidateException(
-                    "Voter " + request.getVoterID() + " is already a candidate in this election");
+                    "Voter " + request.getNomineeVoterID() + " is already a candidate in this election");
 
         Candidate candidate = new Candidate();
-        candidate.setRegisteredVoter(voter);
-        candidate.setElectionTypeId(request.getElectionTypeId());
+        candidate.setRegisteredVoter(nominee);
+        candidate.setElectionTypeId(request.getElectionId());
         candidate.setNominatedAt(LocalDateTime.now());
         Candidate saved = candidateRepository.save(candidate);
 
+        if (election.getCandidateIds() == null) election.setCandidateIds(new java.util.ArrayList<>());
         election.getCandidateIds().add(saved.getId());
         electionTypeRepository.save(election);
 
-        List<String> otherCandidateNames = getOtherCandidateNames(saved.getId(), request.getElectionTypeId());
+        List<String> otherCandidateNames = getOtherCandidateNames(saved.getId(), request.getElectionId());
         return map(saved, election, otherCandidateNames);
     }
 

@@ -16,6 +16,17 @@ public class ElectionController {
     @Autowired
     private ElectionService electionService;
 
+    @GetMapping
+    public ResponseEntity<?> getAllElections() {
+        try {
+            return new ResponseEntity<>(
+                    new ApiResponse(true, electionService.getAllElections()), HttpStatus.OK);
+        } catch (VotingAppException e) {
+            return new ResponseEntity<>(
+                    new ApiResponse(false, e.getMessage()), HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PostMapping("/create")
     public ResponseEntity<?> createElection(@RequestBody CreateElectionRequest request) {
         try {

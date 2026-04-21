@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/ElectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/ElectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/ElectionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/data/models/ElectionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/AdminRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/AdminRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CreateElectionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CreateElectionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/NominateCandidateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/NominateCandidateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/AdminLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/AdminLoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/AdminRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/AdminRegistrationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/ElectionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/ElectionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/NominateCandidateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/response/NominateCandidateResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CandidateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CandidateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/ElectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/ElectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/ElectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/ElectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/CandidateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/CandidateMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/ElectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/utils/ElectionMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

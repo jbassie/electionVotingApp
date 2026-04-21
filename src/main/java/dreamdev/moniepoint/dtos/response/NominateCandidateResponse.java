@@ -16,7 +16,7 @@ public class NominateCandidateResponse {
 
 
     private String electionName;
-    private String electionTypeId;
+    private String electionId;
 
 
     private List<String> otherCandidateNames;

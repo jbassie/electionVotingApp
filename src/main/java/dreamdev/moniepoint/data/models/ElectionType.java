@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,10 @@ public class ElectionType {
     private String id;
     private String name;
     private String description;
+    private String type;
     private ElectionStatus status = ElectionStatus.PENDING;
     private List<String> candidateIds = new ArrayList<>();
+    private LocalDate startDate;
+    private LocalDate endDate;
     private LocalDateTime createdAt;
 }

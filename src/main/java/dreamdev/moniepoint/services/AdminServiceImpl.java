@@ -27,11 +27,12 @@ public class AdminServiceImpl implements AdminService {
 
         Admin admin = new Admin();
         admin.setUsername(request.getUsername());
+        admin.setEmail(request.getEmail());
         admin.setPassword(request.getPassword());
         admin.setCreatedAt(LocalDateTime.now());
 
         Admin saved = adminRepository.save(admin);
-        return new AdminRegistrationResponse(saved.getId(), saved.getUsername());
+        return new AdminRegistrationResponse(saved.getId(), saved.getUsername(), saved.getEmail());
     }
 
     @Override

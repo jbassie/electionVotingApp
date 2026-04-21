@@ -17,8 +17,10 @@ import dreamdev.moniepoint.exceptions.UnauthorizedAdminException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static dreamdev.moniepoint.utils.ElectionMapper.map;
 import static dreamdev.moniepoint.utils.ElectionMapper.mapToResults;
@@ -47,6 +49,9 @@ public class ElectionServiceImpl implements ElectionService {
         ElectionType election = new ElectionType();
         election.setName(request.getName());
         election.setDescription(request.getDescription());
+        election.setType(request.getType());
+        election.setStartDate(LocalDate.parse(request.getStartDate()));
+        election.setEndDate(LocalDate.parse(request.getEndDate()));
         election.setCreatedAt(LocalDateTime.now());
         return map(electionTypeRepository.save(election));
     }
@@ -77,6 +82,14 @@ public class ElectionServiceImpl implements ElectionService {
 
         election.setStatus(ElectionStatus.CLOSED);
         return map(electionTypeRepository.save(election));
+    }
+
+    @Override
+    public List<ElectionResponse> getAllElections() {
+        return electionTypeRepository.findAll()
+                .stream()
+                .map(election -> map(election))
+                .collect(Collectors.toList());
     }
 
     @Override
