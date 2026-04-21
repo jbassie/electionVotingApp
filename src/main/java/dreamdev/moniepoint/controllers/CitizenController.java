@@ -17,6 +17,7 @@ public class CitizenController {
 
     private CitizenService citizenService;
 
+    // Allow your Vite dev server
     @PostMapping("/citizens/register")
     public ResponseEntity<?> register(@RequestBody CitizenRegistrationRequest citizenRegistrationRequest ){
         try{

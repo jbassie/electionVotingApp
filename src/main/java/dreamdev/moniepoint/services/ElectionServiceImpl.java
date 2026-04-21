@@ -1,15 +1,19 @@
 package dreamdev.moniepoint.services;
 
+import dreamdev.moniepoint.data.models.Admin;
 import dreamdev.moniepoint.data.models.Candidate;
 import dreamdev.moniepoint.data.models.ElectionStatus;
 import dreamdev.moniepoint.data.models.ElectionType;
+import dreamdev.moniepoint.data.repositories.AdminRepository;
 import dreamdev.moniepoint.data.repositories.CandidateRepository;
 import dreamdev.moniepoint.data.repositories.ElectionTypeRepository;
 import dreamdev.moniepoint.dtos.request.CreateElectionRequest;
 import dreamdev.moniepoint.dtos.response.ElectionResponse;
 import dreamdev.moniepoint.dtos.response.ElectionResultsResponse;
+import dreamdev.moniepoint.exceptions.AdminNotFoundException;
 import dreamdev.moniepoint.exceptions.ElectionNotFoundException;
 import dreamdev.moniepoint.exceptions.InvalidElectionStateException;
+import dreamdev.moniepoint.exceptions.UnauthorizedAdminException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +32,18 @@ public class ElectionServiceImpl implements ElectionService {
     @Autowired
     private CandidateRepository candidateRepository;
 
+    @Autowired
+    private AdminRepository adminRepository;
+
     @Override
     public ElectionResponse createElection(CreateElectionRequest request) {
+        Admin admin = adminRepository.findById(request.getAdminId())
+                .orElseThrow(() -> new AdminNotFoundException(
+                        "No admin found with ID: " + request.getAdminId()));
+
+        if (!admin.isLoggedIn())
+            throw new UnauthorizedAdminException("Admin must be logged in to create an election");
+
         ElectionType election = new ElectionType();
         election.setName(request.getName());
         election.setDescription(request.getDescription());

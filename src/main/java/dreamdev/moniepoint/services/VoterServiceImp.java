@@ -17,6 +17,8 @@ import dreamdev.moniepoint.exceptions.InvalidLoginDetailsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Optional;
 
 import static dreamdev.moniepoint.utils.VotersMapper.*;
@@ -35,12 +37,27 @@ public class VoterServiceImp implements VoterService {
         Citizen citizen = citizensRepository.findByNationalID(
                         votersRegistrationRequest.getNationalID())
                 .orElseThrow(() -> new CitizenNotFoundException(
-                        "Citizen not found with ID: " + votersRegistrationRequest.getNationalID()));
+                        "One or More of the Provided Details is Incorrect"));
 
+        if(!citizen.getPhoneNumber().equals(votersRegistrationRequest.getPhoneNumber())) {
+            throw new CitizenNotFoundException("One or More of the Provided Details is Incorrect");
+        };
+
+        try {
+            LocalDate parsedRequestDob = LocalDate.parse(votersRegistrationRequest.getDateOfBirth());
+            System.out.println(parsedRequestDob.toString());
+            System.out.println(citizen.getDateOfBirth().toString());
+            if (!citizen.getDateOfBirth().equals(parsedRequestDob)) {
+                throw new CitizenNotFoundException("Date of Birth is incorrect");
+            }
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid date format. Expected format: YYYY-MM-DD");
+        }
 
         if(registeredVotersRepository.findByNationalID(
                 votersRegistrationRequest.getNationalID()).isPresent())
             throw new AlreadyRegisteredException("Citizen is already a registered voter");
+
         RegisteredVoter savedRegisteredVoter = registeredVotersRepository.save(map(votersRegistrationRequest, citizen));
 
         return map(savedRegisteredVoter);

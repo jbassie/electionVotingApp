@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class CreateElectionRequest {
+    private String adminId;
     private String name;
     private String description;
 }

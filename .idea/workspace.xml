@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="" />
+    <list default="true" id="e9963e20-9145-41ae-9d00-2bc8c28c29bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/controllers/CitizenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/dtos/request/CitizenRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,49 +42,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.CandidateRepositoryTest.executor": "Run",
-    "JUnit.CandidateServiceImplTest.executor": "Run",
-    "JUnit.CitizenRepositoryTest.executor": "Run",
-    "JUnit.CitizenServiceImplTest.duplicatePhoneNumber_throwsException.executor": "Run",
-    "JUnit.CitizenServiceImplTest.executor": "Run",
-    "JUnit.CitizenServiceImplTest.register_successTest.executor": "Run",
-    "JUnit.CitizensControllerTest.testRegisterSuccess.executor": "Run",
-    "JUnit.ElectionServiceImplTest.executor": "Run",
-    "JUnit.ElectionTypeRepositoryTest.executor": "Run",
-    "JUnit.NationalIDGeneratorTest.executor": "Run",
-    "JUnit.RegisteredVoterRepositoryTest.executor": "Run",
-    "JUnit.RegisteredVoterRepositoryTest.newRepository_ReturnsZero.executor": "Run",
-    "JUnit.RegisteredVoterRepositoryTest.testSaveRegisteredVoter.executor": "Run",
-    "JUnit.StateEnumTest.executor": "Run",
-    "JUnit.VoterServiceImplTest.executor": "Run",
-    "JUnit.VotersIDGeneratorTest.executor": "Run",
-    "JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CandidateRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CandidateServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenServiceImplTest.duplicatePhoneNumber_throwsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenServiceImplTest.register_successTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizensControllerTest.testRegisterSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ElectionServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ElectionTypeRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NationalIDGeneratorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegisteredVoterRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegisteredVoterRepositoryTest.newRepository_ReturnsZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegisteredVoterRepositoryTest.testSaveRegisteredVoter.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StateEnumTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VoterServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VotersIDGeneratorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VotersIDGeneratorTest.twoGeneratedIDs_AreUnique.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="dreamdev.moniepoint.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CandidateServiceImplTest">
-    <configuration name="CandidateRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.Main" />
       <module name="electionVotingApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dreamdev.moniepoint.data.repositories.*" />
+          <option name="PATTERN" value="dreamdev.moniepoint.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dreamdev.moniepoint.data.repositories" />
-      <option name="MAIN_CLASS_NAME" value="dreamdev.moniepoint.data.repositories.CandidateRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CandidateServiceImplTest" />
         <item itemvalue="JUnit.ElectionServiceImplTest" />
         <item itemvalue="JUnit.VoterServiceImplTest" />
         <item itemvalue="JUnit.ElectionTypeRepositoryTest" />
-        <item itemvalue="JUnit.CandidateRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,11 +175,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/CitizenServiceImpl.java</url>
           <line>22</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dreamdev/moniepoint/services/VoterServiceImp.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
