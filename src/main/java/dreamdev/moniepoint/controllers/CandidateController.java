@@ -28,7 +28,7 @@ public class CandidateController {
     }
 
     @GetMapping("/{electionTypeId}")
-    public ResponseEntity<?> getCandidates(@PathVariable String electionTypeId) {
+    public ResponseEntity<?> getCandidates(@PathVariable("electionTypeId") String electionTypeId) {
         try {
             return new ResponseEntity<>(
                     new ApiResponse(true, candidateService.getCandidatesByElection(electionTypeId)), HttpStatus.OK);

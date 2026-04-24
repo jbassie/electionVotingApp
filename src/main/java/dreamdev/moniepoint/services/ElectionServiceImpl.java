@@ -98,9 +98,9 @@ public class ElectionServiceImpl implements ElectionService {
                 .orElseThrow(() -> new ElectionNotFoundException(
                         "No election found with ID: " + electionTypeId));
 
-        if (election.getStatus() != ElectionStatus.CLOSED)
+        if (election.getStatus() == ElectionStatus.PENDING)
             throw new InvalidElectionStateException(
-                    "Results are only available for CLOSED elections. Current status: " + election.getStatus());
+                    "Results are not available yet. Election has not started.");
 
         List<Candidate> sortedCandidates =
                 candidateRepository.findAllByElectionTypeIdOrderByVoteCountDesc(electionTypeId);

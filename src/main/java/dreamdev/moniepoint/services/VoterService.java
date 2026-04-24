@@ -7,8 +7,11 @@ import dreamdev.moniepoint.dtos.response.VotersLoginResponse;
 import dreamdev.moniepoint.dtos.response.VotersLogoutResponse;
 import dreamdev.moniepoint.dtos.response.VotersRegistrationResponse;
 
+import java.util.List;
+
 public interface VoterService {
     VotersRegistrationResponse register(VotersRegistrationRequest votersRegistrationRequest);
     VotersLoginResponse login(VotersLoginRequest votersLoginRequest);
     VotersLogoutResponse logout(String voterID);
+    List<VotersRegistrationResponse> getAllVoters();
 }

@@ -19,7 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static dreamdev.moniepoint.utils.VotersMapper.*;
 
@@ -77,6 +79,14 @@ public class VoterServiceImp implements VoterService {
         registeredVotersRepository.save(voter);
 
         return mapToLoginResponse(voter);
+    }
+
+    @Override
+    public List<VotersRegistrationResponse> getAllVoters() {
+        return registeredVotersRepository.findAll()
+                .stream()
+                .map(voter -> map(voter))
+                .collect(Collectors.toList());
     }
 
     @Override

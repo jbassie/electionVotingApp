@@ -9,6 +9,6 @@ import lombok.Data;
 public class AdminLoginResponse {
     @JsonProperty("admin_id")
     private String adminId;
-    private String username;
+    private String email;
     private boolean isLoggedIn;
 }

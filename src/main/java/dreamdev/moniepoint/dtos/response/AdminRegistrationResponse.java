@@ -7,6 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class AdminRegistrationResponse {
     private String adminId;
-    private String username;
     private String email;
 }

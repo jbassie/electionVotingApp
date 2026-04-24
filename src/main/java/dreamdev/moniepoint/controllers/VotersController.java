@@ -18,6 +18,12 @@ public class VotersController {
         @Autowired
         private VoterService voterService;
 
+        @GetMapping
+        public ResponseEntity<?> getAllVoters() {
+            return new ResponseEntity<>(
+                    new ApiResponse(true, voterService.getAllVoters()), HttpStatus.OK);
+        }
+
         @PostMapping("register")
         public ResponseEntity<?> register(@RequestBody VotersRegistrationRequest request) {
             try {

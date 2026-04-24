@@ -39,7 +39,7 @@ public class ElectionController {
     }
 
     @PatchMapping("/{electionTypeId}/start")
-    public ResponseEntity<?> startElection(@PathVariable String electionTypeId) {
+    public ResponseEntity<?> startElection(@PathVariable("electionTypeId") String electionTypeId) {
         try {
             return new ResponseEntity<>(
                     new ApiResponse(true, electionService.startElection(electionTypeId)), HttpStatus.OK);
@@ -50,7 +50,7 @@ public class ElectionController {
     }
 
     @PatchMapping("/{electionTypeId}/close")
-    public ResponseEntity<?> closeElection(@PathVariable String electionTypeId) {
+    public ResponseEntity<?> closeElection(@PathVariable("electionTypeId") String electionTypeId) {
         try {
             return new ResponseEntity<>(
                     new ApiResponse(true, electionService.closeElection(electionTypeId)), HttpStatus.OK);
@@ -61,7 +61,7 @@ public class ElectionController {
     }
 
     @GetMapping("/{electionTypeId}/results")
-    public ResponseEntity<?> getResults(@PathVariable String electionTypeId) {
+    public ResponseEntity<?> getResults(@PathVariable("electionTypeId") String electionTypeId) {
         try {
             return new ResponseEntity<>(
                     new ApiResponse(true, electionService.getResults(electionTypeId)), HttpStatus.OK);

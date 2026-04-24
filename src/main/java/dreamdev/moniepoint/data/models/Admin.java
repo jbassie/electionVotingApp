@@ -12,7 +12,6 @@ public class Admin {
     @Id
     private String id;
 
-    private String username;
     private String email;
     private String password;
     private boolean isLoggedIn;

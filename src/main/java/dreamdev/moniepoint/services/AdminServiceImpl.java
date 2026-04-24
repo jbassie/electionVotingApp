@@ -22,24 +22,23 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public AdminRegistrationResponse register(AdminRegistrationRequest request) {
-        if (adminRepository.findByUsername(request.getUsername()).isPresent())
-            throw new AlreadyRegisteredException("Admin with username '" + request.getUsername() + "' already exists");
+        if (adminRepository.findByEmail(request.getEmail()).isPresent())
+            throw new AlreadyRegisteredException("Admin with email '" + request.getEmail() + "' already exists");
 
         Admin admin = new Admin();
-        admin.setUsername(request.getUsername());
         admin.setEmail(request.getEmail());
         admin.setPassword(request.getPassword());
         admin.setCreatedAt(LocalDateTime.now());
 
         Admin saved = adminRepository.save(admin);
-        return new AdminRegistrationResponse(saved.getId(), saved.getUsername(), saved.getEmail());
+        return new AdminRegistrationResponse(saved.getId(), saved.getEmail());
     }
 
     @Override
     public AdminLoginResponse login(AdminLoginRequest request) {
-        Admin admin = adminRepository.findByUsername(request.getUsername())
+        Admin admin = adminRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new AdminNotFoundException(
-                        "No admin found with username: " + request.getUsername()));
+                        "No admin found with email: " + request.getEmail()));
 
         if (!admin.getPassword().equals(request.getPassword()))
             throw new InvalidLoginDetailsException("Incorrect password");
@@ -47,6 +46,6 @@ public class AdminServiceImpl implements AdminService {
         admin.setLoggedIn(true);
         adminRepository.save(admin);
 
-        return new AdminLoginResponse(admin.getId(), admin.getUsername(), true);
+        return new AdminLoginResponse(admin.getId(), admin.getEmail(), true);
     }
 }
